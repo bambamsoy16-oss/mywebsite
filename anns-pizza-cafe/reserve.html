@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve a Station &mdash; Ann's 24/7 Pizza House &amp; Internet Cafe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="reserve.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <span class="logo-mark">&#127829;</span>
+                Ann's
+                <span class="logo-sub">24/7</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#menu">Menu</a></li>
+                <li><a href="index.html#cafe">Internet Cafe</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="index.html#delivery" class="nav-delivery">&#128666; Delivery</a></li>
+                <li><a href="index.html#contact">Visit</a></li>
+            </ul>
+            <a href="tel:09157169445" class="btn btn-primary nav-cta">&#128222; 0915-716-9445</a>
+        </nav>
+    </header>
+
+    <section class="reserve-hero">
+        <a href="index.html" class="back-link">&larr; Back to Home</a>
+        <span class="eyebrow accent-blue">Book Your Slot</span>
+        <h1>Reserve <span class="accent-blue">a Station</span></h1>
+        <p>Pick your time, pack your snacks, and we&apos;ll have your seat warm and ready. Add food now and unlock combo discounts.</p>
+    </section>
+
+    <section class="reserve-wrap">
+        <form id="reserve-form" class="reserve-grid" autocomplete="off">
+            <!-- LEFT: Form -->
+            <div class="reserve-main">
+                <div class="form-card">
+                    <h2><span class="step-num">1</span> Your Details</h2>
+                    <div class="form-row">
+                        <label>
+                            Full Name
+                            <input type="text" name="fullname" placeholder="Juan Dela Cruz" required>
+                        </label>
+                        <label>
+                            Phone Number
+                            <input type="tel" name="phone" placeholder="0917-000-0000" required>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-card">
+                    <h2><span class="step-num">2</span> Play Schedule</h2>
+                    <div class="form-row">
+                        <label>
+                            Date
+                            <input type="date" name="date" id="play-date" required>
+                        </label>
+                        <label>
+                            Start Time
+                            <input type="time" name="start-time" id="start-time" required>
+                        </label>
+                    </div>
+
+                    <span class="field-label">Choose Your Package</span>
+                    <div class="package-choice">
+                        <label class="pkg-option">
+                            <input type="radio" name="package" value="regular" checked>
+                            <div class="pkg-card">
+                                <span class="pkg-tag">&#9728; Regular</span>
+                                <strong>&#8369;15<small>/hr</small></strong>
+                                <span class="pkg-sub">7:00 AM &mdash; 11:59 PM</span>
+                            </div>
+                        </label>
+                        <label class="pkg-option">
+                            <input type="radio" name="package" value="overnight">
+                            <div class="pkg-card">
+                                <span class="pkg-tag pkg-tag-night">&#127769; Overnight</span>
+                                <strong>&#8369;80<small>flat</small></strong>
+                                <span class="pkg-sub">12 AM &mdash; 7 AM (7 hrs)</span>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="duration-block" id="duration-block">
+                        <span class="field-label">Hours of Play</span>
+                        <div class="stepper">
+                            <button type="button" class="step-btn" data-step="hours" data-dir="-1">&minus;</button>
+                            <input type="number" id="hours" name="hours" min="1" max="12" value="2" readonly>
+                            <button type="button" class="step-btn" data-step="hours" data-dir="1">+</button>
+                            <span class="stepper-suffix">hours</span>
+                        </div>
+                        <span class="hint">Min 1 hr, max 12 hrs for Regular package.</span>
+                    </div>
+
+                    <label class="check-line">
+                        <input type="checkbox" name="premium" id="premium">
+                        <span>
+                            <strong>Premium Station</strong> &mdash; RTX 4060, 240Hz monitor, mech keyboard
+                            <em>+&#8369;10/hr</em>
+                        </span>
+                    </label>
+                </div>
+
+                <div class="form-card">
+                    <h2><span class="step-num">3</span> Snacks &amp; Drinks <span class="optional">(Optional)</span></h2>
+                    <p class="form-sub">Bundle food with your slot and save up to <strong>&#8369;120</strong>. Items are delivered to your station.</p>
+
+                    <span class="field-label">&#127829; Pizza</span>
+                    <div class="addon-grid" data-group="pizza">
+                        <div class="addon" data-name="Pepperoni Pizza" data-price="135" data-key="pepperoni">
+                            <div class="addon-info">
+                                <strong>Pepperoni</strong>
+                                <span>Classic pepperoni, mozzarella, tomato sauce</span>
+                            </div>
+                            <div class="addon-right">
+                                <span class="addon-price">&#8369;135</span>
+                                <div class="qty">
+                                    <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                    <span class="qty-num">0</span>
+                                    <button type="button" class="qty-btn" data-dir="1">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="addon" data-name="Hawaiian Pizza" data-price="130" data-key="hawaiian">
+                            <div class="addon-info">
+                                <strong>Hawaiian</strong>
+                                <span>Pineapple, ham, mozzarella</span>
+                            </div>
+                            <div class="addon-right">
+                                <span class="addon-price">&#8369;130</span>
+                                <div class="qty">
+                                    <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                    <span class="qty-num">0</span>
+                                    <button type="button" class="qty-btn" data-dir="1">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="addon" data-name="Ham &amp; Cheese Pizza" data-price="130" data-key="hamcheese">
+                            <div class="addon-info">
+                                <strong>Ham &amp; Cheese</strong>
+                                <span>Ham, double cheese, white sauce</span>
+                            </div>
+                            <div class="addon-right">
+                                <span class="addon-price">&#8369;130</span>
+                                <div class="qty">
+                                    <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                    <span class="qty-num">0</span>
+                                    <button type="button" class="qty-btn" data-dir="1">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="addon" data-name="Ann's Special Pizza" data-price="150" data-key="special">
+                            <div class="addon-info">
+                                <strong>Ann&apos;s Special</strong>
+                                <span>Pepperoni, ham, sausage, peppers, mushrooms</span>
+                            </div>
+                            <div class="addon-right">
+                                <span class="addon-price">&#8369;150</span>
+                                <div class="qty">
+                                    <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                    <span class="qty-num">0</span>
+                                    <button type="button" class="qty-btn" data-dir="1">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <span class="field-label">&#127828; Short Order Food</span>
+                    <div class="addon-grid" data-group="shortorder">
+                        <div class="addon" data-name="Single Burger" data-price="35" data-key="burger-single">
+                            <div class="addon-info">
+                                <strong>Single Burger</strong>
+                                <span>Beef patty, cheese, signature sauce</span>
+                            </div>
+                            <div class="addon-right">
+                                <span class="addon-price">&#8369;35</span>
+                                <div class="qty">
+                                    <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                    <span class="qty-num">0</span>
+                                    <button type="button" class="qty-btn" data-dir="1">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="addon" data-name="Double Deal (Buy 1 Take 1)" data-price="60" data-key="burger-double">
+                            <div class="addon-info">
+                                <strong>Double Deal <em class="addon-flag">Buy 1 Take 1</em></strong>
+                                <span>Two burgers, bundle price</span>
+                            </div>
+                            <div class="addon-right">
+                                <span class="addon-price">&#8369;60</span>
+                                <div class="qty">
+                                    <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                    <span class="qty-num">0</span>
+                                    <button type="button" class="qty-btn" data-dir="1">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="addon" data-name="Fries" data-price="25" data-key="fries">
+                            <div class="addon-info">
+                                <strong>Fries &#127839;</strong>
+                                <span>Crispy golden fries, lightly salted</span>
+                            </div>
+                            <div class="addon-right">
+                                <span class="addon-price">&#8369;25</span>
+                                <div class="qty">
+                                    <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                    <span class="qty-num">0</span>
+                                    <button type="button" class="qty-btn" data-dir="1">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="addon" data-name="Siomai" data-price="25" data-key="siomai">
+                            <div class="addon-info">
+                                <strong>Siomai &#129386;</strong>
+                                <span>4 pcs steamed pork siomai with soy-calamansi</span>
+                            </div>
+                            <div class="addon-right">
+                                <span class="addon-price">&#8369;25</span>
+                                <div class="qty">
+                                    <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                    <span class="qty-num">0</span>
+                                    <button type="button" class="qty-btn" data-dir="1">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="addon" data-name="Fishball" data-price="15" data-key="fishball">
+                            <div class="addon-info">
+                                <strong>Fishball &#127844;</strong>
+                                <span>10 pcs, sweet / spicy / vinegar sauce</span>
+                            </div>
+                            <div class="addon-right">
+                                <span class="addon-price">&#8369;15</span>
+                                <div class="qty">
+                                    <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                    <span class="qty-num">0</span>
+                                    <button type="button" class="qty-btn" data-dir="1">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="addon" data-name="Kikiam" data-price="20" data-key="kikiam">
+                            <div class="addon-info">
+                                <strong>Kikiam &#127837;</strong>
+                                <span>5 pcs golden-fried with sweet sauce</span>
+                            </div>
+                            <div class="addon-right">
+                                <span class="addon-price">&#8369;20</span>
+                                <div class="qty">
+                                    <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                    <span class="qty-num">0</span>
+                                    <button type="button" class="qty-btn" data-dir="1">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <span class="field-label">&#127864; Drinks <em class="hint-inline">from &#8369;15</em></span>
+                    <div class="addon-grid addon-grid-tight" data-group="drinks">
+                        <div class="addon addon-mini" data-name="Coke" data-price="25" data-key="drink-coke">
+                            <strong>Coke <em class="addon-mini-price">&#8369;25</em></strong>
+                            <div class="qty">
+                                <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                <span class="qty-num">0</span>
+                                <button type="button" class="qty-btn" data-dir="1">+</button>
+                            </div>
+                        </div>
+                        <div class="addon addon-mini" data-name="Sprite" data-price="25" data-key="drink-sprite">
+                            <strong>Sprite <em class="addon-mini-price">&#8369;25</em></strong>
+                            <div class="qty">
+                                <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                <span class="qty-num">0</span>
+                                <button type="button" class="qty-btn" data-dir="1">+</button>
+                            </div>
+                        </div>
+                        <div class="addon addon-mini" data-name="Royal" data-price="25" data-key="drink-royal">
+                            <strong>Royal <em class="addon-mini-price">&#8369;25</em></strong>
+                            <div class="qty">
+                                <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                <span class="qty-num">0</span>
+                                <button type="button" class="qty-btn" data-dir="1">+</button>
+                            </div>
+                        </div>
+                        <div class="addon addon-mini" data-name="C2" data-price="30" data-key="drink-c2">
+                            <strong>C2 <em class="addon-mini-price">&#8369;30</em></strong>
+                            <div class="qty">
+                                <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                <span class="qty-num">0</span>
+                                <button type="button" class="qty-btn" data-dir="1">+</button>
+                            </div>
+                        </div>
+                        <div class="addon addon-mini" data-name="Sting" data-price="30" data-key="drink-sting">
+                            <strong>Sting <em class="addon-mini-price">&#8369;30</em></strong>
+                            <div class="qty">
+                                <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                <span class="qty-num">0</span>
+                                <button type="button" class="qty-btn" data-dir="1">+</button>
+                            </div>
+                        </div>
+                        <div class="addon addon-mini" data-name="Cobra" data-price="35" data-key="drink-cobra">
+                            <strong>Cobra <em class="addon-mini-price">&#8369;35</em></strong>
+                            <div class="qty">
+                                <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                <span class="qty-num">0</span>
+                                <button type="button" class="qty-btn" data-dir="1">+</button>
+                            </div>
+                        </div>
+                        <div class="addon addon-mini" data-name="Lemonade" data-price="30" data-key="drink-lemonade">
+                            <strong>Lemonade <em class="addon-mini-price">&#8369;30</em></strong>
+                            <div class="qty">
+                                <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                <span class="qty-num">0</span>
+                                <button type="button" class="qty-btn" data-dir="1">+</button>
+                            </div>
+                        </div>
+                        <div class="addon addon-mini" data-name="Iced Coffee" data-price="40" data-key="drink-icedcoffee">
+                            <strong>Iced Coffee <em class="addon-mini-price">&#8369;40</em></strong>
+                            <div class="qty">
+                                <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                <span class="qty-num">0</span>
+                                <button type="button" class="qty-btn" data-dir="1">+</button>
+                            </div>
+                        </div>
+                        <div class="addon addon-mini" data-name="Hot Coffee" data-price="20" data-key="drink-hotcoffee">
+                            <strong>Hot Coffee <em class="addon-mini-price">&#8369;20</em></strong>
+                            <div class="qty">
+                                <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                <span class="qty-num">0</span>
+                                <button type="button" class="qty-btn" data-dir="1">+</button>
+                            </div>
+                        </div>
+                        <div class="addon addon-mini" data-name="Milk Tea" data-price="50" data-key="drink-milktea">
+                            <strong>Milk Tea <em class="addon-mini-price">&#8369;50</em></strong>
+                            <div class="qty">
+                                <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                <span class="qty-num">0</span>
+                                <button type="button" class="qty-btn" data-dir="1">+</button>
+                            </div>
+                        </div>
+                        <div class="addon addon-mini" data-name="Iced Tea" data-price="20" data-key="drink-icedtea">
+                            <strong>Iced Tea <em class="addon-mini-price">&#8369;20</em></strong>
+                            <div class="qty">
+                                <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                <span class="qty-num">0</span>
+                                <button type="button" class="qty-btn" data-dir="1">+</button>
+                            </div>
+                        </div>
+                        <div class="addon addon-mini" data-name="Bottled Water" data-price="15" data-key="drink-water">
+                            <strong>Water <em class="addon-mini-price">&#8369;15</em></strong>
+                            <div class="qty">
+                                <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                <span class="qty-num">0</span>
+                                <button type="button" class="qty-btn" data-dir="1">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="promo-note" id="promo-note">
+                        &#11088; <strong>Auto Combo Deal:</strong> Overnight Pass + Pepperoni + any drink = <em>&#8369;200 total</em> (Save &#8369;120)
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Summary -->
+            <aside class="reserve-summary">
+                <div class="summary-card">
+                    <h3>Order Summary</h3>
+
+                    <div class="summary-section">
+                        <div class="summary-row">
+                            <span id="sum-package-label">Regular &mdash; 2 hrs</span>
+                            <span id="sum-package-price">&#8369;30</span>
+                        </div>
+                        <div class="summary-row summary-sub" id="sum-premium-row" hidden>
+                            <span id="sum-premium-label">Premium upgrade</span>
+                            <span id="sum-premium-price">&#8369;20</span>
+                        </div>
+                    </div>
+
+                    <div class="summary-section" id="sum-addons-section" hidden>
+                        <strong class="summary-heading">Snacks &amp; Drinks</strong>
+                        <div id="sum-addons"></div>
+                    </div>
+
+                    <div class="summary-section" id="sum-discount-section" hidden>
+                        <div class="summary-row discount-row">
+                            <span>&#127881; Combo Discount</span>
+                            <span id="sum-discount">&minus;&#8369;0</span>
+                        </div>
+                    </div>
+
+                    <div class="summary-divider"></div>
+
+                    <div class="summary-row summary-total">
+                        <span>Total</span>
+                        <span id="sum-total">&#8369;30</span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large btn-full">Confirm Reservation</button>
+                    <a href="tel:09157169445" class="btn btn-ghost btn-full">Or Call 0915-716-9445</a>
+                </div>
+            </aside>
+        </form>
+
+        <div id="confirmation" class="confirmation" hidden>
+            <span class="confirm-icon">&#9989;</span>
+            <h2>Reservation Sent!</h2>
+            <p id="confirm-text">We&apos;ll text you a confirmation shortly.</p>
+            <a href="index.html" class="btn btn-primary">Back to Home</a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-bottom" style="border:0; padding-top:0;">
+            <span>&copy; 2026 Ann&apos;s 24/7 Pizza House &amp; Internet Cafe.</span>
+            <span>Elga Zone II, Brgy Don Jorge Araneta, Bago City &middot; 0915-716-9445</span>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var form = document.getElementById('reserve-form');
+            var dateInput = document.getElementById('play-date');
+            var hoursInput = document.getElementById('hours');
+            var premiumInput = document.getElementById('premium');
+            var durationBlock = document.getElementById('duration-block');
+
+            // Default date = today (Manila time)
+            var nowManila = new Date().toLocaleString('en-CA', { timeZone: 'Asia/Manila' });
+            dateInput.min = nowManila.slice(0, 10);
+            dateInput.value = nowManila.slice(0, 10);
+
+            // Steppers (hours)
+            document.querySelectorAll('.step-btn').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var dir = parseInt(btn.dataset.dir, 10);
+                    var v = parseInt(hoursInput.value, 10) + dir;
+                    if (v < 1) v = 1;
+                    if (v > 12) v = 12;
+                    hoursInput.value = v;
+                    update();
+                });
+            });
+
+            // Add-on qty buttons
+            document.querySelectorAll('.qty-btn').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var addon = btn.closest('.addon');
+                    var num = addon.querySelector('.qty-num');
+                    var v = parseInt(num.textContent, 10) + parseInt(btn.dataset.dir, 10);
+                    if (v < 0) v = 0;
+                    if (v > 10) v = 10;
+                    num.textContent = v;
+                    addon.classList.toggle('addon-active', v > 0);
+                    update();
+                });
+            });
+
+            // Package change
+            document.querySelectorAll('input[name="package"]').forEach(function (r) {
+                r.addEventListener('change', update);
+            });
+            premiumInput.addEventListener('change', update);
+
+            function getSelectedPackage() {
+                var el = document.querySelector('input[name="package"]:checked');
+                return el ? el.value : 'regular';
+            }
+
+            function collectAddons() {
+                var list = [];
+                document.querySelectorAll('.addon').forEach(function (a) {
+                    var qty = parseInt(a.querySelector('.qty-num').textContent, 10);
+                    if (qty > 0) {
+                        list.push({
+                            key: a.dataset.key,
+                            name: a.dataset.name.replace(/&amp;/g, '&').replace(/&apos;/g, "'"),
+                            price: parseInt(a.dataset.price, 10),
+                            qty: qty
+                        });
+                    }
+                });
+                return list;
+            }
+
+            function formatPeso(n) {
+                return '₱' + n.toLocaleString('en-PH');
+            }
+
+            function update() {
+                var pkg = getSelectedPackage();
+                var hours = parseInt(hoursInput.value, 10);
+                var premium = premiumInput.checked;
+                var addons = collectAddons();
+
+                // Package pricing
+                var pkgLabel, pkgPrice;
+                if (pkg === 'overnight') {
+                    pkgLabel = 'Overnight Pass &mdash; 7 hrs flat';
+                    pkgPrice = 80;
+                    durationBlock.classList.add('disabled');
+                } else {
+                    pkgLabel = 'Regular &mdash; ' + hours + ' hr' + (hours > 1 ? 's' : '');
+                    pkgPrice = 15 * hours;
+                    durationBlock.classList.remove('disabled');
+                }
+
+                // Premium upgrade
+                var premiumPrice = 0;
+                if (premium) {
+                    var prHours = pkg === 'overnight' ? 7 : hours;
+                    premiumPrice = 10 * prHours;
+                }
+
+                document.getElementById('sum-package-label').innerHTML = pkgLabel;
+                document.getElementById('sum-package-price').textContent = formatPeso(pkgPrice);
+
+                var premRow = document.getElementById('sum-premium-row');
+                if (premium) {
+                    premRow.hidden = false;
+                    document.getElementById('sum-premium-label').textContent =
+                        'Premium upgrade (' + (pkg === 'overnight' ? 7 : hours) + ' hr)';
+                    document.getElementById('sum-premium-price').textContent = formatPeso(premiumPrice);
+                } else {
+                    premRow.hidden = true;
+                }
+
+                // Add-ons
+                var addonsTotal = 0;
+                var addonsHtml = '';
+                addons.forEach(function (a) {
+                    addonsTotal += a.price * a.qty;
+                    addonsHtml += '<div class="summary-row summary-sub">' +
+                        '<span>' + a.name + ' &times;' + a.qty + '</span>' +
+                        '<span>' + formatPeso(a.price * a.qty) + '</span>' +
+                        '</div>';
+                });
+                var addonsSection = document.getElementById('sum-addons-section');
+                if (addons.length > 0) {
+                    addonsSection.hidden = false;
+                    document.getElementById('sum-addons').innerHTML = addonsHtml;
+                } else {
+                    addonsSection.hidden = true;
+                }
+
+                // Combo discount: Overnight + Pepperoni + any drink = ₱200 total
+                var discount = 0;
+                var hasPepperoni = addons.some(function (a) { return a.key === 'pepperoni'; });
+                var drinkAddon = addons.find(function (a) { return a.key.indexOf('drink-') === 0; });
+                if (pkg === 'overnight' && hasPepperoni && drinkAddon) {
+                    var rawCombo = 80 + 135 + drinkAddon.price;
+                    discount = rawCombo - 200;
+                    if (discount < 0) discount = 0;
+                }
+
+                // Volume bundle: 2+ pizzas = 10% off pizza total
+                var pizzaKeys = ['pepperoni', 'hawaiian', 'hamcheese', 'special'];
+                var pizzaQty = 0, pizzaSubtotal = 0;
+                addons.forEach(function (a) {
+                    if (pizzaKeys.indexOf(a.key) !== -1) {
+                        pizzaQty += a.qty;
+                        pizzaSubtotal += a.price * a.qty;
+                    }
+                });
+                if (pizzaQty >= 2) {
+                    discount += Math.round(pizzaSubtotal * 0.10);
+                }
+
+                var discSection = document.getElementById('sum-discount-section');
+                if (discount > 0) {
+                    discSection.hidden = false;
+                    document.getElementById('sum-discount').textContent = '−' + formatPeso(discount);
+                } else {
+                    discSection.hidden = true;
+                }
+
+                var total = pkgPrice + premiumPrice + addonsTotal - discount;
+                if (total < 0) total = 0;
+                document.getElementById('sum-total').textContent = formatPeso(total);
+
+                // Highlight combo note
+                var note = document.getElementById('promo-note');
+                if (pkg === 'overnight' && hasPepperoni && drinkAddon) {
+                    note.classList.add('promo-note-active');
+                } else {
+                    note.classList.remove('promo-note-active');
+                }
+            }
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                if (!form.reportValidity()) return;
+                var fd = new FormData(form);
+                var addons = collectAddons();
+                var total = document.getElementById('sum-total').textContent;
+                form.hidden = true;
+                var conf = document.getElementById('confirmation');
+                conf.hidden = false;
+                document.getElementById('confirm-text').innerHTML =
+                    'Thanks, <strong>' + (fd.get('fullname') || 'gamer') + '</strong>! Your slot for <strong>' +
+                    fd.get('date') + '</strong> at <strong>' + fd.get('start-time') + '</strong> is locked in. ' +
+                    'Total: <strong>' + total + '</strong>. We&rsquo;ll text confirmation to ' +
+                    '<strong>' + (fd.get('phone') || 'your number') + '</strong>.';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            update();
+        })();
+    </script>
+</body>
+</html>

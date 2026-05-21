@@ -18,10 +18,11 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#cafe">Internet Cafe</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#delivery" class="nav-delivery">&#128666; Delivery</a></li>
                 <li><a href="#contact">Visit</a></li>
             </ul>
-            <a href="#menu" class="btn btn-primary nav-cta">Order Now</a>
+            <a href="tel:09157169445" class="btn btn-primary nav-cta">&#128222; 0915-716-9445</a>
         </nav>
         <div class="status-bar">
             <span class="status-dot"></span>
@@ -53,27 +54,48 @@
                 <div class="glow-orb glow-red"></div>
                 <div class="glow-orb glow-blue"></div>
                 <div class="pizza-disc">
-                    <div class="pizza-base"></div>
-                    <span class="topping t1"></span>
-                    <span class="topping t2"></span>
-                    <span class="topping t3"></span>
-                    <span class="topping t4"></span>
-                    <span class="topping t5"></span>
-                    <span class="topping t6"></span>
-                    <span class="topping t7"></span>
+                    <img src="logo.png" alt="Ann's 24/7 Pizza &amp; Internet Cafe" class="pizza-logo">
                 </div>
-                <div class="card-float card-wifi">
-                    <span class="card-icon">&#128246;</span>
+                <div class="card-float card-flavors" aria-label="Pizza flavors showcase">
+                    <div class="flavor-cycle">
+                        <span class="flavor-slide flavor-pepperoni"></span>
+                        <span class="flavor-slide flavor-hawaiian"></span>
+                        <span class="flavor-slide flavor-hamcheese"></span>
+                        <span class="flavor-slide flavor-special"></span>
+                    </div>
                     <div>
-                        <strong>1 Gbps Fiber</strong>
-                        <span>Free for diners</span>
+                        <strong class="flavor-name">
+                            <span>Pepperoni</span>
+                            <span>Hawaiian</span>
+                            <span>Ham &amp; Cheese</span>
+                            <span>Ann&apos;s Special</span>
+                        </strong>
+                        <span>4 wood-fired flavors</span>
+                    </div>
+                </div>
+                <div class="card-float card-pc">
+                    <div class="pc-illustration" aria-hidden="true">
+                        <div class="pc-monitor">
+                            <div class="pc-screen">
+                                <span class="pc-bar pc-bar-1"></span>
+                                <span class="pc-bar pc-bar-2"></span>
+                                <span class="pc-bar pc-bar-3"></span>
+                            </div>
+                            <div class="pc-stand"></div>
+                            <div class="pc-base"></div>
+                        </div>
+                        <div class="pc-keyboard"></div>
+                    </div>
+                    <div>
+                        <strong>500 Mbps</strong>
+                        <span>Discounted for diners</span>
                     </div>
                 </div>
                 <div class="card-float card-time">
                     <span class="card-icon">&#9200;</span>
                     <div>
-                        <strong>03:42 AM</strong>
-                        <span>Still serving</span>
+                        <strong id="ph-clock">--:-- --</strong>
+                        <span>Manila &middot; Still serving</span>
                     </div>
                 </div>
             </div>
@@ -119,7 +141,7 @@
                     <p class="menu-desc">Classic pepperoni slices, melted mozzarella, savory tomato sauce.</p>
                     <div class="menu-footer">
                         <span class="price">&#8369;135</span>
-                        <a href="#" class="btn btn-small">Order</a>
+                        <a href="order.html?pizza=pepperoni" class="btn btn-small">Order</a>
                     </div>
                 </div>
             </article>
@@ -132,7 +154,7 @@
                     <p class="menu-desc">Sweet pineapple chunks, smoky ham, mozzarella, tomato base.</p>
                     <div class="menu-footer">
                         <span class="price">&#8369;130</span>
-                        <a href="#" class="btn btn-small">Order</a>
+                        <a href="order.html?pizza=hawaiian" class="btn btn-small">Order</a>
                     </div>
                 </div>
             </article>
@@ -145,7 +167,7 @@
                     <p class="menu-desc">Sliced ham, double mozzarella, cheddar, white sauce base.</p>
                     <div class="menu-footer">
                         <span class="price">&#8369;130</span>
-                        <a href="#" class="btn btn-small">Order</a>
+                        <a href="order.html?pizza=hamcheese" class="btn btn-small">Order</a>
                     </div>
                 </div>
             </article>
@@ -158,7 +180,7 @@
                     <p class="menu-desc">Pepperoni, ham, sausage, bell peppers, mushrooms, extra cheese.</p>
                     <div class="menu-footer">
                         <span class="price">&#8369;150</span>
-                        <a href="#" class="btn btn-small">Order</a>
+                        <a href="order.html?pizza=special" class="btn btn-small">Order</a>
                     </div>
                 </div>
             </article>
@@ -167,10 +189,10 @@
         <div class="extras-block">
             <div class="extras-card burgers-card">
                 <div class="extras-head">
-                    <span class="eyebrow">Burgers</span>
-                    <h3>Juicy &amp; Grilled to Order</h3>
+                    <span class="eyebrow">Short Order Food</span>
+                    <h3>Quick Bites &amp; Pinoy Favorites</h3>
                 </div>
-                <div class="burger-row">
+                <div class="burger-row burger-row-grid">
                     <div class="burger-deal">
                         <span class="burger-icon">&#127828;</span>
                         <div>
@@ -184,9 +206,41 @@
                         <span class="burger-icon">&#127828;&#127828;</span>
                         <div>
                             <strong>Double Deal</strong>
-                            <span>Get two burgers for the price of one bundle</span>
+                            <span>Two burgers, bundle price</span>
                         </div>
                         <span class="burger-price">&#8369;60</span>
+                    </div>
+                    <div class="burger-deal">
+                        <span class="burger-icon">&#127839;</span>
+                        <div>
+                            <strong>Fries</strong>
+                            <span>Crispy golden fries, lightly salted</span>
+                        </div>
+                        <span class="burger-price">&#8369;25</span>
+                    </div>
+                    <div class="burger-deal">
+                        <span class="burger-icon">&#129386;</span>
+                        <div>
+                            <strong>Siomai</strong>
+                            <span>Steamed pork siomai, 4 pcs with soy-calamansi</span>
+                        </div>
+                        <span class="burger-price">&#8369;25</span>
+                    </div>
+                    <div class="burger-deal">
+                        <span class="burger-icon">&#127844;</span>
+                        <div>
+                            <strong>Fishball</strong>
+                            <span>10 pcs with sweet, spicy, or vinegar sauce</span>
+                        </div>
+                        <span class="burger-price">&#8369;15</span>
+                    </div>
+                    <div class="burger-deal">
+                        <span class="burger-icon">&#127837;</span>
+                        <div>
+                            <strong>Kikiam</strong>
+                            <span>5 pcs golden-fried, served with sweet sauce</span>
+                        </div>
+                        <span class="burger-price">&#8369;20</span>
                     </div>
                 </div>
             </div>
@@ -203,8 +257,14 @@
                     <div class="drink-chip"><span class="drink-dot drink-c2"></span><strong>C2</strong></div>
                     <div class="drink-chip"><span class="drink-dot drink-sting"></span><strong>Sting</strong></div>
                     <div class="drink-chip"><span class="drink-dot drink-cobra"></span><strong>Cobra</strong></div>
+                    <div class="drink-chip"><span class="drink-dot drink-lemonade"></span><strong>Lemonade</strong></div>
+                    <div class="drink-chip"><span class="drink-dot drink-icedcoffee"></span><strong>Iced Coffee</strong></div>
+                    <div class="drink-chip"><span class="drink-dot drink-hotcoffee"></span><strong>Hot Coffee</strong></div>
+                    <div class="drink-chip"><span class="drink-dot drink-milktea"></span><strong>Milk Tea</strong></div>
+                    <div class="drink-chip"><span class="drink-dot drink-icedtea"></span><strong>Iced Tea</strong></div>
+                    <div class="drink-chip"><span class="drink-dot drink-water"></span><strong>Bottled Water</strong></div>
                 </div>
-                <p class="drinks-note">All Coca-Cola products and energy drinks available chilled.</p>
+                <p class="drinks-note">Sodas &amp; energy drinks chilled. Fresh lemonade, iced coffee &amp; milk tea made daily.</p>
             </div>
         </div>
     </section>
@@ -248,12 +308,28 @@
                     </div>
                 </div>
 
-                <div class="combo-banner">
-                    <div>
-                        <strong>The Late Slice Combo</strong>
-                        <span>Overnight Pass + Pepperoni Pizza + Drink &mdash; <em>&#8369;200</em></span>
+                <div class="promo-highlight">
+                    <span class="promo-ribbon">&#11088; Tonight&apos;s Special</span>
+                    <div class="promo-body">
+                        <div class="promo-info">
+                            <span class="promo-eyebrow">Featured Promo</span>
+                            <strong class="promo-title">The Late Slice Combo</strong>
+                            <ul class="promo-items">
+                                <li>&#127881; Overnight Pass</li>
+                                <li>&#127829; Pepperoni Pizza</li>
+                                <li>&#127864; Drink</li>
+                            </ul>
+                        </div>
+                        <div class="promo-cta">
+                            <div class="promo-pricing">
+                                <span class="promo-price-old">&#8369;320</span>
+                                <span class="promo-price">&#8369;200</span>
+                                <span class="promo-save">Save &#8369;120</span>
+                            </div>
+                            <a href="reserve.html" class="btn btn-primary promo-btn">Reserve a Seat</a>
+                            <span class="promo-meta">Limited slots &middot; 10 PM &mdash; 6 AM</span>
+                        </div>
                     </div>
-                    <a href="#contact" class="btn btn-primary">Reserve a Seat</a>
                 </div>
             </div>
         </div>
@@ -279,6 +355,33 @@
         </div>
     </section>
 
+    <section id="delivery" class="delivery">
+        <div class="delivery-card">
+            <span class="delivery-eyebrow">&#128666; Hot &amp; Fast</span>
+            <h2>Delivery Hotline</h2>
+            <p class="delivery-sub">Craving a slice? We deliver across Bago City &mdash; piping hot, straight from our wood-fired oven to your door.</p>
+            <a href="tel:09157169445" class="delivery-phone">
+                <span class="delivery-icon">&#128222;</span>
+                <span class="delivery-number">0915-716-9445</span>
+            </a>
+            <div class="delivery-meta">
+                <div>
+                    <strong>Hours</strong>
+                    <span>24/7 &mdash; Order anytime</span>
+                </div>
+                <div>
+                    <strong>Coverage</strong>
+                    <span>Bago City &amp; nearby barangays</span>
+                </div>
+                <div>
+                    <strong>Min. Order</strong>
+                    <span>&#8369;250</span>
+                </div>
+            </div>
+            <a href="tel:09157169445" class="btn btn-primary btn-large">Call to Order</a>
+        </div>
+    </section>
+
     <section id="contact" class="contact">
         <div class="contact-content">
             <h2>Come Hang Out</h2>
@@ -286,11 +389,11 @@
             <div class="contact-info">
                 <div>
                     <strong>Address</strong>
-                    <span>248 Marquette Ave, Downtown</span>
+                    <span>Elga Zone II, Brgy Don Jorge Araneta, Bago City</span>
                 </div>
                 <div>
-                    <strong>Phone</strong>
-                    <span>(555) 247-PIZZA</span>
+                    <strong>Phone &amp; Delivery</strong>
+                    <span><a href="tel:09157169445" class="contact-link">0915-716-9445</a></span>
                 </div>
                 <div>
                     <strong>Email</strong>
@@ -301,7 +404,7 @@
                     <span>24/7 &mdash; Always Open</span>
                 </div>
             </div>
-            <a href="#" class="btn btn-primary btn-large">Reserve a Station</a>
+            <a href="reserve.html" class="btn btn-primary btn-large">Reserve a Station</a>
         </div>
     </section>
 
@@ -318,8 +421,8 @@
                 <h4>Order</h4>
                 <ul>
                     <li><a href="#menu">Pizza Menu</a></li>
-                    <li><a href="#menu">Sides &amp; Drinks</a></li>
-                    <li><a href="#">Delivery</a></li>
+                    <li><a href="#menu">Short Orders &amp; Drinks</a></li>
+                    <li><a href="#delivery">Delivery</a></li>
                     <li><a href="#">Catering</a></li>
                 </ul>
             </div>
@@ -338,7 +441,7 @@
                     <li><a href="#contact">Location</a></li>
                     <li><a href="#contact">Hours</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="#about">About Ann</a></li>
+                    <li><a href="about.html">About Ann</a></li>
                 </ul>
             </div>
         </div>
@@ -347,5 +450,20 @@
             <span>Open every minute, of every day.</span>
         </div>
     </footer>
+    <script>
+        (function () {
+            var el = document.getElementById('ph-clock');
+            if (!el) return;
+            var fmt = new Intl.DateTimeFormat('en-US', {
+                timeZone: 'Asia/Manila',
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: true
+            });
+            function tick() { el.textContent = fmt.format(new Date()); }
+            tick();
+            setInterval(tick, 1000);
+        })();
+    </script>
 </body>
 </html>

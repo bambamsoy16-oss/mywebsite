@@ -1,0 +1,210 @@
+/* ===== Order Page ===== */
+.pizza-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.pizza-pick {
+    background: rgba(15, 10, 8, 0.55);
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pizza-pick:hover {
+    transform: translateY(-3px);
+    border-color: rgba(244, 162, 97, 0.5);
+}
+
+.pizza-pick.pizza-picked {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(244, 162, 97, 0.15);
+    background: rgba(244, 162, 97, 0.05);
+}
+
+.pizza-pick-img {
+    height: 140px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    padding: 12px;
+}
+
+.pizza-pick-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.5) 100%);
+    pointer-events: none;
+}
+
+.pizza-tag {
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--cream);
+    padding: 4px 10px;
+    border-radius: 100px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.pizza-tag-hot {
+    background: var(--red);
+    color: #fff;
+}
+
+.pizza-tag-new {
+    background: var(--blue-bright);
+    color: var(--bg);
+}
+
+.pizza-pick-body {
+    padding: 14px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.pizza-pick-body strong {
+    color: var(--cream);
+    font-size: 1.05rem;
+}
+
+.pizza-desc {
+    color: var(--text-dim);
+    font-size: 0.82rem;
+    line-height: 1.4;
+}
+
+.pizza-pick-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+.pizza-price {
+    color: var(--gold);
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+/* ===== Address inputs ===== */
+.full-width {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 18px;
+}
+
+/* ===== Payment Method ===== */
+.payment-choice {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 4px;
+}
+
+.pay-option {
+    cursor: pointer;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.pay-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.pay-card {
+    border: 2px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+    background: rgba(15, 10, 8, 0.4);
+    text-align: center;
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+}
+
+.pay-option input:checked + .pay-card {
+    border-color: var(--gold);
+    background: rgba(244, 162, 97, 0.08);
+    transform: translateY(-2px);
+}
+
+.pay-icon {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.pay-card strong {
+    display: block;
+    color: var(--cream);
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.pay-card span {
+    display: block;
+    color: var(--text-dim);
+    font-size: 0.82rem;
+}
+
+/* ===== Summary tweaks ===== */
+.summary-empty {
+    color: var(--text-mute);
+    font-style: italic;
+    font-size: 0.9rem;
+    padding: 8px 0;
+}
+
+.free-deliv {
+    color: var(--gold);
+    font-size: 0.82rem;
+    font-style: italic;
+}
+
+.sum-address {
+    background: rgba(15, 10, 8, 0.6);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sum-address strong {
+    color: var(--gold);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.sum-address span {
+    color: var(--text);
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+    .pizza-grid {
+        grid-template-columns: 1fr;
+    }
+    .payment-choice {
+        grid-template-columns: 1fr;
+    }
+}

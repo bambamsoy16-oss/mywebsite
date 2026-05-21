@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Pizza &mdash; Ann's 24/7 Pizza House</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="reserve.css">
+    <link rel="stylesheet" href="order.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <span class="logo-mark">&#127829;</span>
+                Ann's
+                <span class="logo-sub">24/7</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#menu">Menu</a></li>
+                <li><a href="index.html#cafe">Internet Cafe</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="index.html#delivery" class="nav-delivery">&#128666; Delivery</a></li>
+                <li><a href="index.html#contact">Visit</a></li>
+            </ul>
+            <a href="tel:09157169445" class="btn btn-primary nav-cta">&#128222; 0915-716-9445</a>
+        </nav>
+    </header>
+
+    <section class="reserve-hero">
+        <a href="index.html#menu" class="back-link">&larr; Back to Menu</a>
+        <span class="eyebrow accent-red">Order Pizza</span>
+        <h1>Hot Slice, <span class="accent-red">Delivered</span></h1>
+        <p>Pick your pizza, set your address &mdash; we&apos;ll be at your door within 30 minutes within Bago City.</p>
+    </section>
+
+    <section class="reserve-wrap">
+        <form id="order-form" class="reserve-grid" autocomplete="off">
+            <div class="reserve-main">
+                <div class="form-card">
+                    <h2><span class="step-num">1</span> Choose Your Pizza</h2>
+                    <p class="form-sub">Tap any pizza to add. Use <strong>+</strong> / <strong>&minus;</strong> to set quantity. Mix and match &mdash; 2+ pizzas get <strong>10% off</strong>.</p>
+
+                    <div class="pizza-grid">
+                        <div class="pizza-pick" data-orderable data-category="pizza" data-key="pepperoni" data-name="Pepperoni Pizza" data-price="135">
+                            <div class="pizza-pick-img" style="background-image:url('pepperoni.jpg');">
+                                <span class="pizza-tag pizza-tag-hot">Bestseller</span>
+                            </div>
+                            <div class="pizza-pick-body">
+                                <strong>Pepperoni</strong>
+                                <span class="pizza-desc">Pepperoni, mozzarella, tomato sauce</span>
+                                <div class="pizza-pick-foot">
+                                    <span class="pizza-price">&#8369;135</span>
+                                    <div class="qty">
+                                        <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                        <span class="qty-num">0</span>
+                                        <button type="button" class="qty-btn" data-dir="1">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pizza-pick" data-orderable data-category="pizza" data-key="hawaiian" data-name="Hawaiian Pizza" data-price="130">
+                            <div class="pizza-pick-img" style="background-image:url('Hawaiian.jpg');">
+                                <span class="pizza-tag">Sweet &amp; Savory</span>
+                            </div>
+                            <div class="pizza-pick-body">
+                                <strong>Hawaiian</strong>
+                                <span class="pizza-desc">Pineapple, ham, mozzarella</span>
+                                <div class="pizza-pick-foot">
+                                    <span class="pizza-price">&#8369;130</span>
+                                    <div class="qty">
+                                        <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                        <span class="qty-num">0</span>
+                                        <button type="button" class="qty-btn" data-dir="1">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pizza-pick" data-orderable data-category="pizza" data-key="hamcheese" data-name="Ham &amp; Cheese Pizza" data-price="130">
+                            <div class="pizza-pick-img" style="background-image:url('ham%20and%20cheese.jpg');">
+                                <span class="pizza-tag">Classic</span>
+                            </div>
+                            <div class="pizza-pick-body">
+                                <strong>Ham &amp; Cheese</strong>
+                                <span class="pizza-desc">Ham, double cheese, white sauce</span>
+                                <div class="pizza-pick-foot">
+                                    <span class="pizza-price">&#8369;130</span>
+                                    <div class="qty">
+                                        <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                        <span class="qty-num">0</span>
+                                        <button type="button" class="qty-btn" data-dir="1">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pizza-pick" data-orderable data-category="pizza" data-key="special" data-name="Ann's Special Pizza" data-price="150">
+                            <div class="pizza-pick-img" style="background-image:url('special.jpg');">
+                                <span class="pizza-tag pizza-tag-new">Ann&apos;s Special</span>
+                            </div>
+                            <div class="pizza-pick-body">
+                                <strong>Ann&apos;s Special</strong>
+                                <span class="pizza-desc">Pepperoni, ham, sausage, peppers, mushrooms</span>
+                                <div class="pizza-pick-foot">
+                                    <span class="pizza-price">&#8369;150</span>
+                                    <div class="qty">
+                                        <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                        <span class="qty-num">0</span>
+                                        <button type="button" class="qty-btn" data-dir="1">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-card">
+                    <h2><span class="step-num">2</span> Sides &amp; Drinks <span class="optional">(Optional)</span></h2>
+                    <p class="form-sub">Round out your order with snacks and refreshments. Items are delivered with your pizza.</p>
+
+                    <span class="field-label">&#127828; Short Order Food</span>
+                    <div class="addon-grid">
+                        <div class="addon" data-orderable data-category="food" data-name="Single Burger" data-price="35" data-key="burger-single">
+                            <div class="addon-info">
+                                <strong>Single Burger &#127828;</strong>
+                                <span>Beef patty, cheese, signature sauce</span>
+                            </div>
+                            <div class="addon-right">
+                                <span class="addon-price">&#8369;35</span>
+                                <div class="qty">
+                                    <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                    <span class="qty-num">0</span>
+                                    <button type="button" class="qty-btn" data-dir="1">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="addon" data-orderable data-category="food" data-name="Double Deal (Buy 1 Take 1)" data-price="60" data-key="burger-double">
+                            <div class="addon-info">
+                                <strong>Double Deal <em class="addon-flag">Buy 1 Take 1</em></strong>
+                                <span>Two burgers, bundle price</span>
+                            </div>
+                            <div class="addon-right">
+                                <span class="addon-price">&#8369;60</span>
+                                <div class="qty">
+                                    <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                    <span class="qty-num">0</span>
+                                    <button type="button" class="qty-btn" data-dir="1">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="addon" data-orderable data-category="food" data-name="Fries" data-price="25" data-key="fries">
+                            <div class="addon-info">
+                                <strong>Fries &#127839;</strong>
+                                <span>Crispy golden fries, lightly salted</span>
+                            </div>
+                            <div class="addon-right">
+                                <span class="addon-price">&#8369;25</span>
+                                <div class="qty">
+                                    <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                    <span class="qty-num">0</span>
+                                    <button type="button" class="qty-btn" data-dir="1">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="addon" data-orderable data-category="food" data-name="Siomai" data-price="25" data-key="siomai">
+                            <div class="addon-info">
+                                <strong>Siomai &#129386;</strong>
+                                <span>4 pcs steamed pork siomai with soy-calamansi</span>
+                            </div>
+                            <div class="addon-right">
+                                <span class="addon-price">&#8369;25</span>
+                                <div class="qty">
+                                    <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                    <span class="qty-num">0</span>
+                                    <button type="button" class="qty-btn" data-dir="1">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="addon" data-orderable data-category="food" data-name="Fishball" data-price="15" data-key="fishball">
+                            <div class="addon-info">
+                                <strong>Fishball &#127844;</strong>
+                                <span>10 pcs, sweet / spicy / vinegar sauce</span>
+                            </div>
+                            <div class="addon-right">
+                                <span class="addon-price">&#8369;15</span>
+                                <div class="qty">
+                                    <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                    <span class="qty-num">0</span>
+                                    <button type="button" class="qty-btn" data-dir="1">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="addon" data-orderable data-category="food" data-name="Kikiam" data-price="20" data-key="kikiam">
+                            <div class="addon-info">
+                                <strong>Kikiam &#127837;</strong>
+                                <span>5 pcs golden-fried with sweet sauce</span>
+                            </div>
+                            <div class="addon-right">
+                                <span class="addon-price">&#8369;20</span>
+                                <div class="qty">
+                                    <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                    <span class="qty-num">0</span>
+                                    <button type="button" class="qty-btn" data-dir="1">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <span class="field-label">&#127864; Drinks <em class="hint-inline">from &#8369;15</em></span>
+                    <div class="addon-grid addon-grid-tight">
+                        <div class="addon addon-mini" data-orderable data-category="drink" data-name="Coke" data-price="25" data-key="drink-coke">
+                            <strong>Coke <em class="addon-mini-price">&#8369;25</em></strong>
+                            <div class="qty">
+                                <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                <span class="qty-num">0</span>
+                                <button type="button" class="qty-btn" data-dir="1">+</button>
+                            </div>
+                        </div>
+                        <div class="addon addon-mini" data-orderable data-category="drink" data-name="Sprite" data-price="25" data-key="drink-sprite">
+                            <strong>Sprite <em class="addon-mini-price">&#8369;25</em></strong>
+                            <div class="qty">
+                                <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                <span class="qty-num">0</span>
+                                <button type="button" class="qty-btn" data-dir="1">+</button>
+                            </div>
+                        </div>
+                        <div class="addon addon-mini" data-orderable data-category="drink" data-name="Royal" data-price="25" data-key="drink-royal">
+                            <strong>Royal <em class="addon-mini-price">&#8369;25</em></strong>
+                            <div class="qty">
+                                <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                <span class="qty-num">0</span>
+                                <button type="button" class="qty-btn" data-dir="1">+</button>
+                            </div>
+                        </div>
+                        <div class="addon addon-mini" data-orderable data-category="drink" data-name="C2" data-price="30" data-key="drink-c2">
+                            <strong>C2 <em class="addon-mini-price">&#8369;30</em></strong>
+                            <div class="qty">
+                                <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                <span class="qty-num">0</span>
+                                <button type="button" class="qty-btn" data-dir="1">+</button>
+                            </div>
+                        </div>
+                        <div class="addon addon-mini" data-orderable data-category="drink" data-name="Sting" data-price="30" data-key="drink-sting">
+                            <strong>Sting <em class="addon-mini-price">&#8369;30</em></strong>
+                            <div class="qty">
+                                <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                <span class="qty-num">0</span>
+                                <button type="button" class="qty-btn" data-dir="1">+</button>
+                            </div>
+                        </div>
+                        <div class="addon addon-mini" data-orderable data-category="drink" data-name="Cobra" data-price="35" data-key="drink-cobra">
+                            <strong>Cobra <em class="addon-mini-price">&#8369;35</em></strong>
+                            <div class="qty">
+                                <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                <span class="qty-num">0</span>
+                                <button type="button" class="qty-btn" data-dir="1">+</button>
+                            </div>
+                        </div>
+                        <div class="addon addon-mini" data-orderable data-category="drink" data-name="Lemonade" data-price="30" data-key="drink-lemonade">
+                            <strong>Lemonade <em class="addon-mini-price">&#8369;30</em></strong>
+                            <div class="qty">
+                                <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                <span class="qty-num">0</span>
+                                <button type="button" class="qty-btn" data-dir="1">+</button>
+                            </div>
+                        </div>
+                        <div class="addon addon-mini" data-orderable data-category="drink" data-name="Iced Coffee" data-price="40" data-key="drink-icedcoffee">
+                            <strong>Iced Coffee <em class="addon-mini-price">&#8369;40</em></strong>
+                            <div class="qty">
+                                <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                <span class="qty-num">0</span>
+                                <button type="button" class="qty-btn" data-dir="1">+</button>
+                            </div>
+                        </div>
+                        <div class="addon addon-mini" data-orderable data-category="drink" data-name="Hot Coffee" data-price="20" data-key="drink-hotcoffee">
+                            <strong>Hot Coffee <em class="addon-mini-price">&#8369;20</em></strong>
+                            <div class="qty">
+                                <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                <span class="qty-num">0</span>
+                                <button type="button" class="qty-btn" data-dir="1">+</button>
+                            </div>
+                        </div>
+                        <div class="addon addon-mini" data-orderable data-category="drink" data-name="Milk Tea" data-price="50" data-key="drink-milktea">
+                            <strong>Milk Tea <em class="addon-mini-price">&#8369;50</em></strong>
+                            <div class="qty">
+                                <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                <span class="qty-num">0</span>
+                                <button type="button" class="qty-btn" data-dir="1">+</button>
+                            </div>
+                        </div>
+                        <div class="addon addon-mini" data-orderable data-category="drink" data-name="Iced Tea" data-price="20" data-key="drink-icedtea">
+                            <strong>Iced Tea <em class="addon-mini-price">&#8369;20</em></strong>
+                            <div class="qty">
+                                <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                <span class="qty-num">0</span>
+                                <button type="button" class="qty-btn" data-dir="1">+</button>
+                            </div>
+                        </div>
+                        <div class="addon addon-mini" data-orderable data-category="drink" data-name="Bottled Water" data-price="15" data-key="drink-water">
+                            <strong>Water <em class="addon-mini-price">&#8369;15</em></strong>
+                            <div class="qty">
+                                <button type="button" class="qty-btn" data-dir="-1">&minus;</button>
+                                <span class="qty-num">0</span>
+                                <button type="button" class="qty-btn" data-dir="1">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-card">
+                    <h2><span class="step-num">3</span> Delivery Address</h2>
+                    <div class="form-row">
+                        <label>
+                            Full Name
+                            <input type="text" name="fullname" placeholder="Juan Dela Cruz" required>
+                        </label>
+                        <label>
+                            Phone Number
+                            <input type="tel" name="phone" placeholder="0917-000-0000" required>
+                        </label>
+                    </div>
+
+                    <label class="full-width">
+                        Street &amp; House No.
+                        <input type="text" name="street" placeholder="123 Mabini St." required>
+                    </label>
+
+                    <div class="form-row">
+                        <label>
+                            Barangay
+                            <input type="text" name="barangay" placeholder="Brgy Don Jorge Araneta" required>
+                        </label>
+                        <label>
+                            City
+                            <input type="text" name="city" value="Bago City" required>
+                        </label>
+                    </div>
+
+                    <label class="full-width">
+                        Landmark / Notes
+                        <input type="text" name="landmark" placeholder="Near the church, blue gate, etc.">
+                    </label>
+
+                    <span class="field-label">Payment Method</span>
+                    <div class="payment-choice">
+                        <label class="pay-option">
+                            <input type="radio" name="payment" value="cod" checked>
+                            <div class="pay-card">
+                                <span class="pay-icon">&#128181;</span>
+                                <strong>Cash on Delivery</strong>
+                                <span>Pay the rider at your door</span>
+                            </div>
+                        </label>
+                        <label class="pay-option">
+                            <input type="radio" name="payment" value="gcash">
+                            <div class="pay-card">
+                                <span class="pay-icon">&#128241;</span>
+                                <strong>GCash</strong>
+                                <span>We&apos;ll text the GCash number</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="reserve-summary">
+                <div class="summary-card">
+                    <h3>Order Summary</h3>
+
+                    <div class="summary-section" id="sum-items-section">
+                        <div id="sum-items" class="summary-empty">No pizza selected yet.</div>
+                    </div>
+
+                    <div class="summary-section" id="sum-discount-section" hidden>
+                        <div class="summary-row discount-row">
+                            <span>&#127881; Bundle Discount (10%)</span>
+                            <span id="sum-discount">&minus;&#8369;0</span>
+                        </div>
+                    </div>
+
+                    <div class="summary-section">
+                        <div class="summary-row summary-sub">
+                            <span>Subtotal</span>
+                            <span id="sum-subtotal">&#8369;0</span>
+                        </div>
+                        <div class="summary-row summary-sub">
+                            <span id="sum-delivery-label">Delivery Fee</span>
+                            <span id="sum-delivery">&#8369;50</span>
+                        </div>
+                        <div class="summary-row summary-sub free-deliv" id="sum-free-note" hidden>
+                            <span>&#127881; Free delivery unlocked at &#8369;500+</span>
+                        </div>
+                    </div>
+
+                    <div class="summary-divider"></div>
+
+                    <div class="summary-row summary-total">
+                        <span>Total</span>
+                        <span id="sum-total">&#8369;50</span>
+                    </div>
+
+                    <div id="sum-address-block" class="sum-address" hidden>
+                        <strong>Deliver to:</strong>
+                        <span id="sum-address-text"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large btn-full">Place Order</button>
+                    <a href="tel:09157169445" class="btn btn-ghost btn-full">Or Call 0915-716-9445</a>
+                </div>
+            </aside>
+        </form>
+
+        <div id="confirmation" class="confirmation" hidden>
+            <span class="confirm-icon">&#9989;</span>
+            <h2>Order Placed!</h2>
+            <p id="confirm-text"></p>
+            <a href="index.html" class="btn btn-primary">Back to Home</a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-bottom" style="border:0; padding-top:0;">
+            <span>&copy; 2026 Ann&apos;s 24/7 Pizza House &amp; Internet Cafe.</span>
+            <span>Elga Zone II, Brgy Don Jorge Araneta, Bago City &middot; 0915-716-9445</span>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var form = document.getElementById('order-form');
+            var DELIVERY_FEE = 50;
+            var FREE_DELIVERY_THRESHOLD = 500;
+
+            // Pre-select pizza from query string
+            var params = new URLSearchParams(window.location.search);
+            var preselect = params.get('pizza');
+            if (preselect) {
+                var picked = document.querySelector('.pizza-pick[data-key="' + preselect + '"]');
+                if (picked) {
+                    picked.querySelector('.qty-num').textContent = '1';
+                    picked.classList.add('pizza-picked');
+                    picked.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+
+            document.querySelectorAll('.qty-btn').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var card = btn.closest('[data-orderable]');
+                    if (!card) return;
+                    var num = card.querySelector('.qty-num');
+                    var v = parseInt(num.textContent, 10) + parseInt(btn.dataset.dir, 10);
+                    if (v < 0) v = 0;
+                    if (v > 10) v = 10;
+                    num.textContent = v;
+                    if (card.classList.contains('pizza-pick')) {
+                        card.classList.toggle('pizza-picked', v > 0);
+                    } else {
+                        card.classList.toggle('addon-active', v > 0);
+                    }
+                    update();
+                });
+            });
+
+            // Re-render summary on any field change (address)
+            form.addEventListener('input', update);
+
+            function collect() {
+                var list = [];
+                document.querySelectorAll('[data-orderable]').forEach(function (p) {
+                    var qty = parseInt(p.querySelector('.qty-num').textContent, 10);
+                    if (qty > 0) {
+                        list.push({
+                            key: p.dataset.key,
+                            category: p.dataset.category,
+                            name: p.dataset.name.replace(/&amp;/g, '&').replace(/&apos;/g, "'"),
+                            price: parseInt(p.dataset.price, 10),
+                            qty: qty
+                        });
+                    }
+                });
+                return list;
+            }
+
+            function peso(n) { return '₱' + n.toLocaleString('en-PH'); }
+
+            function update() {
+                var items = collect();
+                var subtotal = 0;
+                var totalPizzas = 0;
+                var pizzaSubtotal = 0;
+                var groups = { pizza: [], food: [], drink: [] };
+
+                items.forEach(function (it) {
+                    subtotal += it.price * it.qty;
+                    if (it.category === 'pizza') {
+                        totalPizzas += it.qty;
+                        pizzaSubtotal += it.price * it.qty;
+                    }
+                    if (groups[it.category]) groups[it.category].push(it);
+                });
+
+                var headings = { pizza: '&#127829; Pizza', food: '&#127828; Sides', drink: '&#127864; Drinks' };
+                var html = '';
+                ['pizza', 'food', 'drink'].forEach(function (cat) {
+                    if (groups[cat].length === 0) return;
+                    html += '<strong class="summary-heading">' + headings[cat] + '</strong>';
+                    groups[cat].forEach(function (it) {
+                        html += '<div class="summary-row">' +
+                            '<span>' + it.name + ' &times;' + it.qty + '</span>' +
+                            '<span>' + peso(it.price * it.qty) + '</span>' +
+                            '</div>';
+                    });
+                });
+
+                var itemsContainer = document.getElementById('sum-items');
+                if (items.length === 0) {
+                    itemsContainer.className = 'summary-empty';
+                    itemsContainer.textContent = 'Nothing selected yet. Add a pizza, snack, or drink.';
+                } else {
+                    itemsContainer.className = '';
+                    itemsContainer.innerHTML = html;
+                }
+
+                // Bundle discount: 2+ pizzas = 10% off pizza subtotal only
+                var discount = 0;
+                if (totalPizzas >= 2) {
+                    discount = Math.round(pizzaSubtotal * 0.10);
+                }
+                var discSection = document.getElementById('sum-discount-section');
+                if (discount > 0) {
+                    discSection.hidden = false;
+                    document.getElementById('sum-discount').textContent = '−' + peso(discount);
+                } else {
+                    discSection.hidden = true;
+                }
+
+                // Delivery fee: free over ₱500 (after discount)
+                var afterDiscount = subtotal - discount;
+                var delivery = (afterDiscount >= FREE_DELIVERY_THRESHOLD && afterDiscount > 0) ? 0 : DELIVERY_FEE;
+                if (items.length === 0) delivery = DELIVERY_FEE;
+
+                document.getElementById('sum-subtotal').textContent = peso(subtotal);
+                var delivEl = document.getElementById('sum-delivery');
+                if (delivery === 0 && items.length > 0) {
+                    delivEl.innerHTML = '<span style="text-decoration:line-through;color:var(--text-mute);">' + peso(DELIVERY_FEE) + '</span> <strong style="color:var(--blue-bright);">FREE</strong>';
+                } else {
+                    delivEl.textContent = peso(delivery);
+                }
+
+                // Free delivery hint
+                var freeNote = document.getElementById('sum-free-note');
+                if (afterDiscount > 0 && afterDiscount < FREE_DELIVERY_THRESHOLD) {
+                    freeNote.hidden = false;
+                    var needed = FREE_DELIVERY_THRESHOLD - afterDiscount;
+                    freeNote.querySelector('span').innerHTML = 'Add ' + peso(needed) + ' more for FREE delivery';
+                } else {
+                    freeNote.hidden = true;
+                }
+
+                var total = subtotal - discount + delivery;
+                document.getElementById('sum-total').textContent = peso(total);
+
+                // Address preview
+                var fd = new FormData(form);
+                var street = (fd.get('street') || '').trim();
+                var brgy = (fd.get('barangay') || '').trim();
+                var city = (fd.get('city') || '').trim();
+                var addrBlock = document.getElementById('sum-address-block');
+                if (street || brgy) {
+                    addrBlock.hidden = false;
+                    document.getElementById('sum-address-text').textContent =
+                        [street, brgy, city].filter(Boolean).join(', ');
+                } else {
+                    addrBlock.hidden = true;
+                }
+            }
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var items = collect();
+                if (items.length === 0) {
+                    alert('Please add at least one item before placing your order.');
+                    return;
+                }
+                if (!form.reportValidity()) return;
+
+                var fd = new FormData(form);
+                var total = document.getElementById('sum-total').textContent;
+                var addr = [fd.get('street'), fd.get('barangay'), fd.get('city')]
+                    .filter(Boolean).join(', ');
+                var itemsList = items.map(function (i) {
+                    return i.name + ' ×' + i.qty;
+                }).join(', ');
+                var pay = fd.get('payment') === 'gcash' ? 'GCash' : 'Cash on Delivery';
+
+                form.hidden = true;
+                document.getElementById('confirmation').hidden = false;
+                document.getElementById('confirm-text').innerHTML =
+                    'Thanks, <strong>' + (fd.get('fullname') || 'friend') + '</strong>! Your order: ' +
+                    '<strong>' + itemsList + '</strong>.<br>' +
+                    'Delivery to <strong>' + addr + '</strong>.<br>' +
+                    'Total: <strong>' + total + '</strong> &middot; ' + pay + '.<br>' +
+                    'We&rsquo;ll text confirmation to <strong>' + (fd.get('phone') || 'your number') + '</strong>. ETA 30 minutes.';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            update();
+        })();
+    </script>
+</body>
+</html>
