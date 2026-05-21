@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir \"c:\\\\Users\\\\Michael\\\\OneDrive\\\\Desktop\\\\mywebsite\")",
+      "WebSearch",
+      "WebFetch(domain:en.wikipedia.org)",
+      "Bash(curl -o /dev/null -s -w \"ROG Ally: %{http_code}\\\\n\" \"https://upload.wikimedia.org/wikipedia/commons/0/07/ROG_ALLY_-_2.jpg\")",
+      "Bash(curl -o /dev/null -s -w \"Crimson Desert: %{http_code}\\\\n\" \"https://upload.wikimedia.org/wikipedia/en/thumb/7/73/Crimson_Desert_Steam_Cover.jpg/250px-Crimson_Desert_Steam_Cover.jpg\")",
+      "Bash(curl -o /dev/null -s -w \"ROG Hero BG: %{http_code}\\\\n\" \"https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/ASUS_promotional_model_and_Republic-of-Gamers_products_at_Computex_20100603.jpg/1280px-ASUS_promotional_model_and_Republic-of-Gamers_products_at_Computex_20100603.jpg\")",
+      "Bash(mkdir -p \"c:/Users/Michael/OneDrive/Desktop/mywebsite/anns-pizza-cafe\")"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\Michael\\OneDrive\\Desktop\\mywebsite"
+    ]
+  }
+}
