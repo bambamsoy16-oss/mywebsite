@@ -38,6 +38,56 @@ body {
     color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
+    position: relative;
+}
+
+/* ===== Animated background image ===== */
+body::before {
+    content: '';
+    position: fixed;
+    top: -6%;
+    left: -6%;
+    width: 112%;
+    height: 112%;
+    background-image: url('46681ae6-e1f2-4aca-9fba-7cf194dd0c22.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: -2;
+    animation: bgKenBurns 45s ease-in-out infinite alternate;
+    will-change: transform;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at center, rgba(15, 10, 8, 0.72) 0%, rgba(15, 10, 8, 0.92) 100%),
+        linear-gradient(180deg, rgba(230, 57, 70, 0.05) 0%, transparent 50%, rgba(76, 201, 240, 0.05) 100%);
+    z-index: -1;
+    pointer-events: none;
+    animation: overlayPulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes bgKenBurns {
+    0%   { transform: scale(1.05) translate(0%, 0%); }
+    25%  { transform: scale(1.10) translate(-1.5%, -1%); }
+    50%  { transform: scale(1.15) translate(-2%, -2%); }
+    75%  { transform: scale(1.10) translate(1%, -1.5%); }
+    100% { transform: scale(1.05) translate(1.5%, 1%); }
+}
+
+@keyframes overlayPulse {
+    0%   { opacity: 0.95; }
+    100% { opacity: 0.85; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body::before,
+    body::after {
+        animation: none;
+    }
 }
 
 h1, h2, h3, h4 {
@@ -742,8 +792,9 @@ ul {
 /* ===== Cafe ===== */
 .cafe {
     background:
-        radial-gradient(ellipse at top right, rgba(76, 201, 240, 0.1), transparent 60%),
-        var(--bg-soft);
+        radial-gradient(ellipse at top right, rgba(76, 201, 240, 0.15), transparent 60%),
+        rgba(26, 18, 14, 0.55);
+    backdrop-filter: blur(4px);
     padding: 80px 32px;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
@@ -962,8 +1013,9 @@ ul {
 /* ===== Contact ===== */
 .contact {
     background:
-        radial-gradient(ellipse at center, rgba(230, 57, 70, 0.1), transparent 70%),
-        var(--bg-soft);
+        radial-gradient(ellipse at center, rgba(230, 57, 70, 0.18), transparent 70%),
+        rgba(26, 18, 14, 0.55);
+    backdrop-filter: blur(4px);
     padding: 80px 32px;
     border-top: 1px solid var(--border);
 }
@@ -1015,7 +1067,8 @@ ul {
 
 /* ===== Footer ===== */
 .site-footer {
-    background: #0a0705;
+    background: rgba(10, 7, 5, 0.85);
+    backdrop-filter: blur(6px);
     padding: 60px 32px 24px;
     border-top: 1px solid var(--border);
 }
